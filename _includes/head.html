@@ -1,0 +1,50 @@
+<head>
+     <meta charset="utf-8">
+        {% if page.title %}<title>{{ page.title }}</title>{% else %}
+        <title>{{ site.title }}}</title>
+        {% endif %}
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}">
+    {% else %}
+    {% if page.title %}
+    <meta name="description" content="{{ page.title }}">
+    {% endif %}
+    {% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+    {% if page.tags %}
+    <meta name="keywords" content="{{page.tags | join: ', '}}">
+    {% else %}
+    <meta name="keywords" content="WPF MVVM DotNet C# C++ SQL ASP.NET MVC Bootstrap CSS JavaScript">
+    {% endif %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='{{ site.baseurl }}/rss.xml' rel='alternate' type='application/atom+xml'>
+
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ BASE_PATH }}/css/blog.css" media="all" rel="stylesheet">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+
+    <link href="{{ BASE_PATH }}/css/prettify-theme.css" media="all" rel="stylesheet">
+
+    <link rel="shortcut icon" href="{{ BASE_PATH }}/favicon.ico?v=1" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <link href="http://netdna.bootstrapcdn.com/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+    <link href="/js/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="/js/respond.proxy.min.js"></script>
+    <script src="/js/selectivizr-min.js"></script>
+    <![endif]-->
+
+    <!--[if lt IE 10]>
+    <link href="{{ BASE_PATH }}/css/cse-btn-ie.css" media="all" rel="stylesheet">
+    <![endif]-->
+</head>

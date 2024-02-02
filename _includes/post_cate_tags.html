@@ -1,0 +1,11 @@
+<ul class="entry-meta inline-list">
+      <li><a class='tag' href='/categories.html#{{ post.category | downcase }}'>{{ post.category }}</a></li>
+
+      {% assign upperCate = post.category | upcase %}
+      {% for tagItem in post.tags %}
+        {% assign upperTag = tagItem | upcase %}
+        {% if upperTag != upperCate %}
+          <li><a class='tag' href='/tags.html#{{ tagItem | downcase }}'>{{ tagItem }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>

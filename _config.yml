@@ -1,0 +1,36 @@
+title: Nicologies' Website
+name: Nicologies
+markdown: kramdown
+
+exclude: [vendor]
+
+github: https://github.com/Nicologies
+
+#首先概要显示分隔符
+excerpt_separator: "<!--more-->"
+
+#分页
+paginate: 5
+paginate_path: /blog/page:num 
+
+#url格式
+#permalink: /:year/:month/:day/:title
+permalink:  /posts/:title
+
+# comment
+comments:
+    duoshuo:
+        name:  Nicologies                             # short name
+        rcomments:
+            num: 10
+            avatar: 0
+            time: 0
+            title: 0
+            admin: 0
+            length: 26
+
+#google custom search context
+googleCSECX : '001547322286180862641:fulahtqxyzo'
+
+author:
+    name: Nicologies

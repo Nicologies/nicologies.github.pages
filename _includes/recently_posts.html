@@ -1,0 +1,34 @@
+
+{% if page.layout == 'post' %}
+
+<h4>Guess You'll Like</h4>
+<ol class ="list-unstyled">
+    {% assign hasSimilar = '' %}
+    {% for post in site.related_posts %}
+        {% assign postHasSimilar = false %}
+        {% for tag in post.tags %}
+            {% for thisTag in page.tags %}
+                {% if postHasSimilar == false and hasSimilar.size < 20 and post != page and tag == thisTag %}
+                    <li class="relatedPost sep-at-bottom">
+                        <a rel='nofollow' href="{{ site.url }}{{ post.url }}">{{ post.title }}
+                            {% if post.series %}
+                                (Series: {{ post.series }})
+                            {% endif %}
+                        </a>
+                    </li>
+                    {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
+                    {% assign postHasSimilar = true %}
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    {% endfor %}
+</ol>
+{% else %}
+<h4>Latest Posts</h4>
+
+<ol class ="list-unstyled">
+    {% for post in site.posts limit:20 %}
+    <li class='sep-at-bottom'><a rel='nofollow' href="{{ BASE_PATH }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ol>
+{% endif %}

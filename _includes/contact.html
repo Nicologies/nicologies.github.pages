@@ -1,0 +1,61 @@
+<h1>Contact us</h1>
+<hr />
+<p>
+    <b> Apologies for the inconvenience. It appears there's an issue with the form at the moment. We'll address it
+        promptly. </b>
+</p>
+<p>
+    <b> In the meantime, please feel free to send your inquiry to nicologies@gmail.com. Thank you for your patience.
+    </b>
+</p>
+<form class='form-horizontal'
+    action="https://getsimpleform.com/messages?form_api_token=70bb6caa33ee46394866fcde1056d0ed" method="post"
+    role="form">
+    <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
+    <input type='hidden' name='redirect_to' />
+    <!-- all your input fields here.... -->
+
+    <div class="form-group">
+        <label for='name' class='control-label col-sm-3'>Your Name</label>
+        <div class='col-sm-6'>
+            <input class='form-control' type='text' maxlength='20' name='name' placeholder="Put your name here"
+                required />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for='email' class='control-label col-sm-3'>Your Email</label>
+        <div class='col-sm-6'>
+            <input class='form-control' type='email' maxlength='50' name='email' placeholder="Put your email here"
+                required />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for='subject' class='control-label col-sm-3'>Subject</label>
+        <div class='col-sm-6'>
+            <input class='form-control' maxlength="30" type='text' name='subject' placeholder='Subject' required />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for='content' class='control-label col-sm-3'>Message</label>
+        <div class='col-sm-6'>
+            <textarea class='form-control' maxlength='600' rows='8' name='message' placeholder='Leave your message here'
+                required></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-6">
+            <button type="submit" class="btn btn-default pull-right">Submit</button>
+        </div>
+    </div>
+</form>
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $(function () {
+        $("input[name='redirect_to']").val(document.location.origin + "/contact-message-sent.html");
+    })
+</script>

@@ -1,0 +1,150 @@
+---
+layout: products
+title: Tools
+---
+<section>
+    <div class="jumbotron">
+        <h1>Tools</h1>
+        <span class='product-intro'>At Nicologies, we have a passion for making people more productive through smart
+            software solutions that help them focus more on what they really want to accomplish, and less on mundane,
+            repetitive "computer busy work". We think you will find that our products reflect our dedication to this
+            ideal (copied from JetBrains).</span>
+    </div>
+</section>
+<section class='container-fluid'>
+    <aside class='col-sm-12 col-md-3'>
+        <nav>
+            <ul class='nav navbar-stack sidebar-module sidebar-module-inset smaller-font' id='products-side-bar'>
+                <li><a href='#developer_tools'>Developer Tools</a>
+                    <ul class='no-bullet'>
+                        <li><a href='#GitHubBuddy'>GitHubBuddy</a></li>
+                        <li><a href='#GitExtensionsMod'>Enhanced GitExtensions</a></li>
+                        <li><a href='#DBRestorer'>SQLServer DBRestorer</a></li>
+                        <li><a href='#Everything'>Everything</a></li>
+                    </ul>
+                </li>
+                <li><a href='#Others'>Other Products</a>
+                    <ul class='no-bullet'>
+                        <li><a href='#WaFuelFuel'>Fuel Price in Western Australia</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <section class='col-sm-12 col-md-9'>
+        <section id='developer_tools' class='anchor-target'>
+            <h2>Developer Tools</h2>
+            <article id='GitHubBuddy' class='anchor-target sep-at-bottom'>
+                <a href='/posts/GitHubBuddy'>
+                    <h2>
+                        <img alt='GitHubBuddy Icon'
+                            src='http://raw.githubusercontent.com/EbenZhang/PReviewer/master/PReviewer/PReviewer.png'
+                            width='85' />
+                        GitHubBuddy
+                    </h2>
+                </a>
+                {% capture githubbuddy %}{% include githubbuddy_excerpt.md %}{% endcapture %}
+                {{ githubbuddy | markdownify }}
+                <div>
+                    <a href='/posts/GitHubBuddy' class='btn btn-primary'>Read More</a>
+                    <a href='https://addons.mozilla.org/en-US/firefox/addon/githubbuddy' class='btn btn-primary'>Install
+                        for FireFox</a>
+                    <a href='https://chrome.google.com/webstore/detail/githubbuddy/lbnnpglihcnokkjnmidginaihnojkfoo'
+                        class='btn btn-primary'>Install for Chrome/Edge</a>
+                    <a href='https://github.com/Nicologies/GitHubBuddyHost#how-to-install-and-configure'
+                        class='btn btn-primary'>How to install and configure</a>
+                </div>
+            </article>
+            <article id='GitExtensionsMod' class='anchor-target sep-at-bottom'>
+                <a href='/posts/GitExtensionsMOD'>
+                    <h2>
+                        <img alt='GitExtensions Icon' src='/images/EnhancedGitExtensions/gitextensions-logo.png'
+                            width='85' />
+                        GitExtensions Mod
+                    </h2>
+                </a>
+                {% capture gitextensions_excerpt %}{% include gitextensions_excerpt.md %}{% endcapture %}
+                {{ gitextensions_excerpt | markdownify }}
+                <div>
+                    <a href='/posts/GitExtensionsMOD' class='btn btn-primary'>Read More</a>
+                    <a href='https://github.com/EbenZhang/gitextensions/releases/latest'
+                        class='btn btn-primary'>Download</a>
+                </div>
+            </article>
+            <article id='DBRestorer' class='anchor-target sep-at-bottom'>
+                <a href='/posts/DBRestorer'>
+                    <h2>
+                        <img alt='DBRestorer Icon'
+                            src='http://raw.githubusercontent.com/Nicologies/DbRestorer/master/DBRestorer/dbrestorer.ico'
+                            width='85' />
+                        DBRestorer
+                    </h2>
+                </a>
+                {% capture dbrestorer_excerpt %}{% include dbrestorer_excerpt.md %}{% endcapture %}
+                {{ dbrestorer_excerpt | markdownify }}
+                <div>
+                    <a href='/posts/DbRestorer' class='btn btn-primary'>Read More</a>
+                    <a href='https://github.com/Nicologies/DbRestorer/releases/latest'
+                        class='btn btn-primary'>Download</a>
+                </div>
+            </article>
+
+        </section>
+        <section id="3rdParty" class="anchor-target">
+            <article id='Everything' class='anchor-target sep-at-bottom'>
+                <a href='https://www.voidtools.com/downloads/'>
+                    <h2>
+                        <img alt='Everything Icon' src='https://www.voidtools.com/favicon.ico' width='85' />
+                        Everything
+                    </h2>
+                </a>
+                "Everything" is search engine (made by voidtools) that locates files and folders by filename instantly
+                for Windows.
+
+                Unlike Windows search "Everything" initially displays every file and folder on your computer
+                (hence the name "Everything").
+
+                You type in a search filter to limit what files and folders are displayed.
+            </article>
+            <article id='SQLServer First Responder Kit' class='anchor-target sep-at-bottom'>
+                <a href='https://github.com/BrentOzarULTD/SQL-Server-First-Responder-Kit'>
+                    <h2>
+                        <img alt='BrentOzarULTD' src='https://avatars.githubusercontent.com/u/2688558?s=48&v=4'
+                            width='85' />
+                        SQL Server First Responder Kit
+                    </h2>
+                </a>
+                <p>You're a DBA, sysadmin, or developer who manages Microsoft SQL Servers. It's your fault if they're
+                    down
+                    or slow. These tools help you understand what's going on in your server.
+                </p>
+                <p>
+                    When you want an overall health check, run sp_Blitz.
+                    To learn which queries have been using the most resources, run sp_BlitzCache.
+                    To analyze which indexes are missing or slowing you down, run sp_BlitzIndex.
+                    To find out why the server is slow right now, run sp_BlitzFirst.
+                </p>
+            </article>
+        </section>
+        <section id='Others' class='anchor-target'>
+            <article id='WaFuelFuel' class='anchor-target sep-at-bottom'>
+                <a href='/posts/WaFuelFuel'>
+                    <h2>
+                        <img alt='WaFuelFuel Icon'
+                            src='http://lh6.ggpht.com/RAL8BFnHYHOuAgG5tdOwRRbCc7H5XEpjzS7xNGo9fUgTS603cydjfbTArsZrnI47cg=w100'
+                            width='85' />
+                        WaFuelFuel
+                    </h2>
+                </a>
+                {% capture wafuelfuel_excerpt %}{% include wafuelfuel_excerpt.md %}{% endcapture %}
+                {{ wafuelfuel_excerpt | markdownify }}
+                <div>
+                    <a href='/posts/WaFuelFuel' class='btn btn-primary'>Read More</a>
+                    <a href='https://play.google.com/store/apps/details?id=com.ezhang.pop'
+                        class='btn btn-primary'>Install from Google Play</a>
+                </div>
+            </article>
+        </section>
+    </section>
+</section>

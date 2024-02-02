@@ -1,0 +1,114 @@
+<!DOCTYPE html/>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+<script type='text/javascript' src='http://code.jquery.com/jquery-1.11.2.min.js'> </script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<style>
+
+#slide-bg{ 
+    display:block;
+    background:url("http://freeoz.org/ibbs/data/attachment/common/images/icons/aoZhouTongCheng.gif");
+    background-size:cover;
+    height:400px;
+    width:400px;
+}
+
+#slide-bar{
+    left:60%;
+    top:90%;
+    background-color: grey;
+    opacity:0.8;
+    position:absolute;
+}
+
+.slide-container{
+    position:relative;    
+    height:400px;
+    width:400px;
+}
+</style>
+
+<script>
+var slide;
+(function (slide){
+    slide.imgs = ["http://freeoz.org/ibbs/data/attachment/common/images/icons/aoZhouTongCheng.gif","http://freeoz.org/ibbs/data/attachment/common/images/icons/aoZhouXinWen.gif",
+    "http://freeoz.org/ibbs/data/attachment/common/images/icons/cheXingTianXia.gif",
+    "http://freeoz.org/ibbs/data/attachment/common/images/icons/gongZuoXueXi.gif",
+    ];
+    
+    getImgAt = function(index){
+        console.log(index);
+        return slide.imgs[index] || "";
+    }
+    
+    var currIndex = 0;
+    var timer = null;
+    
+    doChangeImage = function(jQuerySlideElem, i){
+        jQuerySlideElem.stop().fadeOut(800, function(){
+            jQuerySlideElem.stop().css({
+                "background-image":"url(" + getImgAt(i) + ")",
+                'background-size':'cover',
+            })
+            .fadeIn(800);
+        });
+        currIndex = i;
+        slide.onImgChanged(i);
+    }
+    
+    slide.changeImgFor = function(jQuerySlideElem, i){
+        doChangeImage(jQuerySlideElem, i);        
+        if(timer){
+            clearTimeout(timer);
+            timer = null;
+        }
+        slide.startSlide(jQuerySlideElem);
+    }
+    
+    nextImgFor = function(jQuerySlideElem){
+        currIndex = (++currIndex) % slide.imgs.length;
+        doChangeImage(jQuerySlideElem, currIndex);
+    }
+    
+    slide.startSlide = function(jQuerySlideElem){
+        timer = setInterval(function(){
+            nextImgFor(jQuerySlideElem);
+        }, 3000);
+    }
+    
+    slide.onImgChanged = function(index){}
+})(slide||(slide = {}));
+
+$(function(){
+    var btnTemplate = "<button type='button' class='btn btn-default' id='js-btn-change-img-{i}'>{i}</button>";
+    var bg = $("#slide-bg");
+    for (var i = 0; i < slide.imgs.length; ++i) {
+        $(btnTemplate.replace(/{i}/g, i)).appendTo('#slide-bar');
+        $("#js-btn-change-img-" + i).click(
+            (function(index){
+                return function(){
+                    slide.changeImgFor(bg, index);
+                    };
+            })(i));
+    }
+    slide.onImgChanged = function(index){
+        $("#js-slide-container button").removeClass('active').blur();
+        $("#js-btn-change-img-" + index).addClass('active');
+    }
+    slide.onImgChanged(0);
+    slide.startSlide($("#slide-bg"));
+});
+</script>
+</head>
+<body class="container-fluid">
+    <div class='row slide-container' id='js-slide-container'>
+        <div id="slide-bg">
+        </div>
+        <div id="slide-bar" class="btn-group">
+        </div>
+    </div>
+</body>
+</html>
